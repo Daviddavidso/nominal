@@ -50,8 +50,9 @@ $file = __DIR__ . '/leads.csv';
 $new  = !file_exists($file);
 if ($fh = @fopen($file, 'a')) {
   if (flock($fh, LOCK_EX)) {
-    if ($new) { fwrite($fh, "\xEF\xBB\xBF"); fputcsv($fh, ['Дата', 'Имя', 'Телефон', 'Продукт', 'IP'], ';'); }
-    fputcsv($fh, [$when, $name, $phone, $productName, $ip], ';');
+    // 5-й аргумент задан явно: с PHP 8.5 без него сыпется Deprecated прямо в ответ
+    if ($new) { fwrite($fh, "\xEF\xBB\xBF"); fputcsv($fh, ['Дата', 'Имя', 'Телефон', 'Продукт', 'IP'], ';', '"', '\\'); }
+    fputcsv($fh, [$when, $name, $phone, $productName, $ip], ';', '"', '\\');
     flock($fh, LOCK_UN);
   }
   fclose($fh);
