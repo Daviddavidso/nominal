@@ -9,14 +9,32 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="НОМИНАЛ — карты, кредиты и вклады без мелкого шрифта">
 <meta property="og:description" content="Условия банков-партнёров в одном месте. Ставка, лимит и комиссии — на карточке, до того как вы оставите заявку.">
-<link rel="icon" href="favicon.svg?v=4" type="image/svg+xml">
+<link rel="icon" href="favicon.svg?v=5" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=4">
+<link rel="stylesheet" href="css/style.css?v=5">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+
+<!-- Векторные марки банков. Один набор, используется и на карточках, и в ленте.
+     Это собственные геометрические знаки в фирменных цветах.
+     Придут официальные SVG от партнёрки — меняете содержимое symbol, и всё встанет само. -->
+<svg class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="lg-alfa" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 26 16 6l11 20"/><path d="M10.5 19h11"/></g></symbol>
+  <symbol id="lg-tbank" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3.5 27 7.6v8.6c0 5.9-4.7 10.4-11 12.3-6.3-1.9-11-6.4-11-12.3V7.6z" stroke-width="2.4"/><path d="M11 13h10M16 13v8.5" stroke-width="2.8"/></g></symbol>
+  <symbol id="lg-ozon" viewBox="0 0 32 32"><circle cx="14" cy="15" r="8.6" fill="none" stroke="currentColor" stroke-width="3.2"/><circle cx="25.4" cy="24.4" r="3.4" fill="currentColor"/></symbol>
+  <symbol id="lg-vtb" viewBox="0 0 32 32"><path d="M4 25 11 7l7 18z" fill="currentColor" opacity=".5"/><path d="M14 25 21 7l7 18z" fill="currentColor"/></symbol>
+  <symbol id="lg-sovcom" viewBox="0 0 32 32"><path d="M23.5 9.5c0-3.6-14.5-3.6-14.5 2.4 0 6.2 14.5 3.1 14.5 9.3 0 6-14.5 6-14.5 2.4" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/></symbol>
+  <symbol id="lg-gpb" viewBox="0 0 32 32"><path d="M16 3s-8 7.7-8 14.6a8 8 0 0 0 16 0C24 10.7 16 3 16 3zm0 20a4.4 4.4 0 0 1-4.4-4.4c0-2.7 4.4-7.2 4.4-7.2s4.4 4.5 4.4 7.2A4.4 4.4 0 0 1 16 23z" fill="currentColor"/></symbol>
+  <symbol id="lg-uralsib" viewBox="0 0 32 32"><path d="M5 23a11 11 0 0 1 22 0" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><circle cx="16" cy="23" r="3.2" fill="currentColor"/></symbol>
+  <symbol id="lg-renaissance" viewBox="0 0 32 32"><path d="M10 27V6h7.5a6.4 6.4 0 0 1 0 12.8H10M17.5 18.8 25.5 27" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="lg-mkb" viewBox="0 0 32 32"><path d="M7.5 25V15M16 25V6.5M24.5 25v-7.5" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/></symbol>
+  <symbol id="lg-pochta" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="8.5" width="23" height="15.5" rx="3"/><path d="M5.5 10.5 16 19l10.5-8.5"/></g></symbol>
+  <symbol id="lg-mts" viewBox="0 0 32 32"><ellipse cx="16" cy="16" rx="8.4" ry="10.4" fill="currentColor"/></symbol>
+  <symbol id="lg-home" viewBox="0 0 32 32"><path d="M4.5 16.5 16 5.5l11.5 11M9 14.5V26h14V14.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
 
 <a class="skip-link" href="#main">Перейти к основному содержанию</a>
 
@@ -98,14 +116,14 @@
     </div>
     <div class="strip__view" id="strip">
       <ul class="strip__row">
-        <li>Т-Банк</li><li>Альфа-Банк</li><li>ВТБ</li><li>Совкомбанк</li><li>Газпромбанк</li>
-        <li>Озон Банк</li><li>Почта Банк</li><li>Ренессанс</li><li>МТС Банк</li><li>Уралсиб</li>
-        <li>МКБ</li><li>Хоум Банк</li>
+        <li><span class="plogo" style="--c:#17181C"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-tbank"/></svg></span>Т-Банк</li><li><span class="plogo" style="--c:#E01F26"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-alfa"/></svg></span>Альфа-Банк</li><li><span class="plogo" style="--c:#0A2896"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-vtb"/></svg></span>ВТБ</li><li><span class="plogo" style="--c:#E8480F"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-sovcom"/></svg></span>Совкомбанк</li><li><span class="plogo" style="--c:#0090D4"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-gpb"/></svg></span>Газпромбанк</li>
+        <li><span class="plogo" style="--c:#1B2AE0"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-ozon"/></svg></span>Озон Банк</li><li><span class="plogo" style="--c:#0072BC"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-pochta"/></svg></span>Почта Банк</li><li><span class="plogo" style="--c:#B8860B"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-renaissance"/></svg></span>Ренессанс</li><li><span class="plogo" style="--c:#E30611"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-mts"/></svg></span>МТС Банк</li><li><span class="plogo" style="--c:#6B34E0"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-uralsib"/></svg></span>Уралсиб</li>
+        <li><span class="plogo" style="--c:#067A76"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-mkb"/></svg></span>МКБ</li><li><span class="plogo" style="--c:#F04E23"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-home"/></svg></span>Хоум Банк</li>
       </ul>
       <ul class="strip__row" aria-hidden="true" inert>
-        <li>Т-Банк</li><li>Альфа-Банк</li><li>ВТБ</li><li>Совкомбанк</li><li>Газпромбанк</li>
-        <li>Озон Банк</li><li>Почта Банк</li><li>Ренессанс</li><li>МТС Банк</li><li>Уралсиб</li>
-        <li>МКБ</li><li>Хоум Банк</li>
+        <li><span class="plogo" style="--c:#17181C"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-tbank"/></svg></span>Т-Банк</li><li><span class="plogo" style="--c:#E01F26"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-alfa"/></svg></span>Альфа-Банк</li><li><span class="plogo" style="--c:#0A2896"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-vtb"/></svg></span>ВТБ</li><li><span class="plogo" style="--c:#E8480F"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-sovcom"/></svg></span>Совкомбанк</li><li><span class="plogo" style="--c:#0090D4"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-gpb"/></svg></span>Газпромбанк</li>
+        <li><span class="plogo" style="--c:#1B2AE0"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-ozon"/></svg></span>Озон Банк</li><li><span class="plogo" style="--c:#0072BC"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-pochta"/></svg></span>Почта Банк</li><li><span class="plogo" style="--c:#B8860B"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-renaissance"/></svg></span>Ренессанс</li><li><span class="plogo" style="--c:#E30611"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-mts"/></svg></span>МТС Банк</li><li><span class="plogo" style="--c:#6B34E0"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-uralsib"/></svg></span>Уралсиб</li>
+        <li><span class="plogo" style="--c:#067A76"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-mkb"/></svg></span>МКБ</li><li><span class="plogo" style="--c:#F04E23"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#lg-home"/></svg></span>Хоум Банк</li>
       </ul>
     </div>
   </div>
@@ -149,11 +167,11 @@
 
         <!-- ДЕБЕТОВЫЕ -->
         <li class="card reveal" data-cat="debit" style="--c:#E01F26;--c2:#FF7A6B;--t:#C4161C">
-          <div class="card__art" aria-hidden="true">
-            <span class="card__top"><span class="card__chip"></span><span class="card__wave"></span><span class="card__logo">Альфа-Банк</span></span>
-            <span class="card__num">•••• 4417</span>
+          <div class="card__head">
+            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-alfa"/></svg></span>
+            <span class="card__bankname">Альфа-Банк</span>
+            <span class="card__tag">дебетовая карта</span>
           </div>
-          <p class="card__bank">Альфа-Банк <span class="card__tag">дебетовая карта</span></p>
           <h3 class="card__title" id="p1-t">Альфа-Карта</h3>
           <p class="card__hero"><b>до 5%</b><span>кэшбэк в выбранных категориях</span></p>
           <dl class="card__spec">
@@ -165,11 +183,11 @@
         </li>
 
         <li class="card reveal" data-cat="debit" style="--c:#17181C;--c2:#5A5F6B;--t:#17181C">
-          <div class="card__art card__art--dark" aria-hidden="true">
-            <span class="card__top"><span class="card__chip"></span><span class="card__wave"></span><span class="card__logo">Т-Банк</span></span>
-            <span class="card__num">•••• 0182</span>
+          <div class="card__head">
+            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-tbank"/></svg></span>
+            <span class="card__bankname">Т-Банк</span>
+            <span class="card__tag">дебетовая карта</span>
           </div>
-          <p class="card__bank">Т-Банк <span class="card__tag">дебетовая карта</span></p>
           <h3 class="card__title" id="p2-t">Карта Black</h3>
           <p class="card__hero"><b>до 30%</b><span>кэшбэк у партнёров банка</span></p>
           <dl class="card__spec">
@@ -181,11 +199,11 @@
         </li>
 
         <li class="card reveal" data-cat="debit" style="--c:#1B2AE0;--c2:#7E6BFF;--t:#1F2BC7">
-          <div class="card__art" aria-hidden="true">
-            <span class="card__top"><span class="card__chip"></span><span class="card__wave"></span><span class="card__logo">Озон Банк</span></span>
-            <span class="card__num">•••• 7741</span>
+          <div class="card__head">
+            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-ozon"/></svg></span>
+            <span class="card__bankname">Озон Банк</span>
+            <span class="card__tag">дебетовая карта</span>
           </div>
-          <p class="card__bank">Озон Банк <span class="card__tag">дебетовая карта</span></p>
           <h3 class="card__title" id="p3-t">Ozon Card</h3>
           <p class="card__hero"><b>до 25%</b><span>кэшбэк баллами на маркетплейсе</span></p>
           <dl class="card__spec">
@@ -198,11 +216,11 @@
 
         <!-- КРЕДИТНЫЕ -->
         <li class="card reveal" data-cat="credit" style="--c:#C81E4A;--c2:#FF6E90;--t:#B01B41">
-          <div class="card__art" aria-hidden="true">
-            <span class="card__top"><span class="card__chip"></span><span class="card__wave"></span><span class="card__logo">Альфа-Банк</span></span>
-            <span class="card__num">•••• 3610</span>
+          <div class="card__head">
+            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-alfa"/></svg></span>
+            <span class="card__bankname">Альфа-Банк</span>
+            <span class="card__tag">кредитная карта</span>
           </div>
-          <p class="card__bank">Альфа-Банк <span class="card__tag">кредитная карта</span></p>
           <h3 class="card__title" id="p4-t">Год без процентов</h3>
           <p class="card__hero"><b>365 дней</b><span>беспроцентный период</span></p>
           <dl class="card__spec">
@@ -214,11 +232,11 @@
         </li>
 
         <li class="card reveal" data-cat="credit" style="--c:#2C3038;--c2:#7C8390;--t:#2C3038">
-          <div class="card__art card__art--dark" aria-hidden="true">
-            <span class="card__top"><span class="card__chip"></span><span class="card__wave"></span><span class="card__logo">Т-Банк</span></span>
-            <span class="card__num">•••• 9052</span>
+          <div class="card__head">
+            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-tbank"/></svg></span>
+            <span class="card__bankname">Т-Банк</span>
+            <span class="card__tag">кредитная карта</span>
           </div>
-          <p class="card__bank">Т-Банк <span class="card__tag">кредитная карта</span></p>
           <h3 class="card__title" id="p5-t">Платинум</h3>
           <p class="card__hero"><b>55 дней</b><span>беспроцентный период</span></p>
           <dl class="card__spec">
@@ -230,11 +248,11 @@
         </li>
 
         <li class="card reveal" data-cat="credit" style="--c:#6B34E0;--c2:#B08BFF;--t:#5B2AC7">
-          <div class="card__art" aria-hidden="true">
-            <span class="card__top"><span class="card__chip"></span><span class="card__wave"></span><span class="card__logo">Уралсиб</span></span>
-            <span class="card__num">•••• 2284</span>
+          <div class="card__head">
+            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-uralsib"/></svg></span>
+            <span class="card__bankname">Уралсиб</span>
+            <span class="card__tag">кредитная карта</span>
           </div>
-          <p class="card__bank">Уралсиб <span class="card__tag">кредитная карта</span></p>
           <h3 class="card__title" id="p6-t">Прибавка</h3>
           <p class="card__hero"><b>120 дней</b><span>беспроцентный период</span></p>
           <dl class="card__spec">
@@ -247,11 +265,11 @@
 
         <!-- КРЕДИТЫ -->
         <li class="card reveal" data-cat="loan" style="--c:#E8480F;--c2:#FFA23B;--t:#B8390B">
-          <div class="card__art" aria-hidden="true">
-            <span class="card__top"><span class="card__chip"></span><span class="card__wave"></span><span class="card__logo">Совкомбанк</span></span>
-            <span class="card__num">наличными</span>
+          <div class="card__head">
+            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-sovcom"/></svg></span>
+            <span class="card__bankname">Совкомбанк</span>
+            <span class="card__tag">кредит наличными</span>
           </div>
-          <p class="card__bank">Совкомбанк <span class="card__tag">кредит наличными</span></p>
           <h3 class="card__title" id="p7-t">Кредит на любые цели</h3>
           <p class="card__hero"><b>от 14,9%</b><span>годовых</span></p>
           <dl class="card__spec">
@@ -263,11 +281,11 @@
         </li>
 
         <li class="card reveal" data-cat="loan" style="--c:#0072BC;--c2:#4FC0FF;--t:#00609F">
-          <div class="card__art" aria-hidden="true">
-            <span class="card__top"><span class="card__chip"></span><span class="card__wave"></span><span class="card__logo">Почта Банк</span></span>
-            <span class="card__num">наличными</span>
+          <div class="card__head">
+            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-pochta"/></svg></span>
+            <span class="card__bankname">Почта Банк</span>
+            <span class="card__tag">кредит наличными</span>
           </div>
-          <p class="card__bank">Почта Банк <span class="card__tag">кредит наличными</span></p>
           <h3 class="card__title" id="p8-t">Первый почтовый</h3>
           <p class="card__hero"><b>от 15,9%</b><span>годовых</span></p>
           <dl class="card__spec">
@@ -279,11 +297,11 @@
         </li>
 
         <li class="card reveal" data-cat="loan" style="--c:#B8860B;--c2:#FFD166;--t:#8A6208">
-          <div class="card__art" aria-hidden="true">
-            <span class="card__top"><span class="card__chip"></span><span class="card__wave"></span><span class="card__logo">Ренессанс Банк</span></span>
-            <span class="card__num">наличными</span>
+          <div class="card__head">
+            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-renaissance"/></svg></span>
+            <span class="card__bankname">Ренессанс Банк</span>
+            <span class="card__tag">кредит наличными</span>
           </div>
-          <p class="card__bank">Ренессанс Банк <span class="card__tag">кредит наличными</span></p>
           <h3 class="card__title" id="p9-t">Кредит без справок</h3>
           <p class="card__hero"><b>от 15,5%</b><span>годовых</span></p>
           <dl class="card__spec">
@@ -296,11 +314,11 @@
 
         <!-- ВКЛАДЫ -->
         <li class="card reveal" data-cat="deposit" style="--c:#067A76;--c2:#3ED6C4;--t:#056662">
-          <div class="card__art" aria-hidden="true">
-            <span class="card__top"><span class="card__chip"></span><span class="card__wave"></span><span class="card__logo">МКБ</span></span>
-            <span class="card__num">вклад</span>
+          <div class="card__head">
+            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-mkb"/></svg></span>
+            <span class="card__bankname">МКБ</span>
+            <span class="card__tag">вклад</span>
           </div>
-          <p class="card__bank">МКБ <span class="card__tag">вклад</span></p>
           <h3 class="card__title" id="p10-t">Верное решение</h3>
           <p class="card__hero"><b>до 18%</b><span>годовых</span></p>
           <dl class="card__spec">
@@ -312,11 +330,11 @@
         </li>
 
         <li class="card reveal" data-cat="deposit" style="--c:#0090D4;--c2:#6FD8FF;--t:#00668F">
-          <div class="card__art" aria-hidden="true">
-            <span class="card__top"><span class="card__chip"></span><span class="card__wave"></span><span class="card__logo">Газпромбанк</span></span>
-            <span class="card__num">вклад</span>
+          <div class="card__head">
+            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-gpb"/></svg></span>
+            <span class="card__bankname">Газпромбанк</span>
+            <span class="card__tag">вклад</span>
           </div>
-          <p class="card__bank">Газпромбанк <span class="card__tag">вклад</span></p>
           <h3 class="card__title" id="p11-t">Копить</h3>
           <p class="card__hero"><b>до 17,5%</b><span>годовых</span></p>
           <dl class="card__spec">
@@ -328,11 +346,11 @@
         </li>
 
         <li class="card reveal" data-cat="deposit" style="--c:#0A2896;--c2:#5A7BFF;--t:#0A2896">
-          <div class="card__art" aria-hidden="true">
-            <span class="card__top"><span class="card__chip"></span><span class="card__wave"></span><span class="card__logo">ВТБ</span></span>
-            <span class="card__num">счёт</span>
+          <div class="card__head">
+            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-vtb"/></svg></span>
+            <span class="card__bankname">ВТБ</span>
+            <span class="card__tag">накопительный счёт</span>
           </div>
-          <p class="card__bank">ВТБ <span class="card__tag">накопительный счёт</span></p>
           <h3 class="card__title" id="p12-t">Сейф</h3>
           <p class="card__hero"><b>до 16%</b><span>годовых на остаток</span></p>
           <dl class="card__spec">
@@ -597,6 +615,6 @@
   </div>
 </footer>
 
-<script src="js/app.js?v=4"></script>
+<script src="js/app.js?v=5"></script>
 </body>
 </html>
