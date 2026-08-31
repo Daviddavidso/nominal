@@ -5,36 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Карты, кредиты и вклады — подбор банковских продуктов | НОМИНАЛ</title>
 <meta name="description" content="Подбор банковских продуктов: дебетовые и кредитные карты, кредиты наличными и вклады банков-партнёров. Ставка, лимит и комиссии видно сразу — до заявки.">
-<meta name="theme-color" content="#F6F0E6">
+<meta name="theme-color" content="#FFFFFF">
 <meta property="og:type" content="website">
 <meta property="og:title" content="НОМИНАЛ — карты, кредиты и вклады без мелкого шрифта">
 <meta property="og:description" content="Условия банков-партнёров в одном месте. Ставка, лимит и комиссии — на карточке, до того как вы оставите заявку.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-
-<!-- живой фон: тёплые световые пятна + зерно. Чисто декоративный слой. -->
-<div class="ambient" aria-hidden="true">
-  <span class="ambient__b ambient__b--1"></span>
-  <span class="ambient__b ambient__b--2"></span>
-  <span class="ambient__b ambient__b--3"></span>
-</div>
-<div class="grain" aria-hidden="true"></div>
 
 <a class="skip-link" href="#main">Перейти к основному содержанию</a>
 
 <header class="hdr" id="top" tabindex="-1">
   <div class="hdr__in shell">
     <a class="brand" href="#top">
-      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-        <rect x="1" y="1" width="30" height="30" rx="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M10 22V10l12 12V10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
-      </svg>
+      <span class="brand__mark" aria-hidden="true"></span>
       <span class="brand__word">Номинал</span>
     </a>
 
@@ -69,39 +58,33 @@
   <div class="hero">
     <div class="shell hero__grid">
       <div class="hero__copy">
-        <p class="kicker reveal">Подбор банковских продуктов</p>
-        <h1 class="display hero__title reveal">Карты, кредиты и вклады<br> <em class="ital">без мелкого шрифта</em></h1>
-        <p class="hero__lead reveal">Собрали условия банков-партнёров в одном месте. Ставка, лимит и комиссии
-          видно прямо на карточке — до того, как вы оставите заявку.</p>
+        <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span>24 банка-партнёра</p>
+        <h1 class="hero__title reveal">Карты, кредиты и вклады <span class="hl">без мелкого шрифта</span></h1>
+        <p class="hero__lead reveal">Собрали условия банков-партнёров в одном месте. Ставка, лимит
+          и комиссии видно прямо на карточке — до того, как вы оставите заявку.</p>
         <div class="hero__acts reveal">
-          <a class="btn btn--ink" href="#products">Смотреть продукты</a>
-          <a class="btn btn--ghost" href="#how">Как это работает</a>
+          <a class="btn btn--ink btn--lg" href="#products">Смотреть продукты</a>
+          <a class="btn btn--soft btn--lg" href="#how">Как это работает</a>
         </div>
 
         <dl class="stats reveal">
-          <div class="stats__i"><dt>Банков-партнёров</dt><dd>24</dd></div>
-          <div class="stats__i"><dt>На заявку уходит</dt><dd>2&nbsp;мин</dd></div>
-          <div class="stats__i"><dt>Стоимость подбора</dt><dd>0&nbsp;₽</dd></div>
+          <div class="stats__i"><dt>Продуктов в подборке</dt><dd>12</dd></div>
+          <div class="stats__i"><dt>На заявку уходит</dt><dd>2 мин</dd></div>
+          <div class="stats__i"><dt>Стоимость подбора</dt><dd>0 ₽</dd></div>
         </dl>
       </div>
 
-      <!-- Декоративная сцена: стопка карт. Скрыта от скринридеров. -->
+      <!-- Декоративный веер карт. Скрыт от скринридеров. -->
       <div class="hero__art reveal" aria-hidden="true">
         <div class="scene">
-          <span class="scene__glow"></span>
-          <div class="pcard pcard--back" data-depth="14">
-            <span class="pcard__brand">Номинал</span>
-            <span class="pcard__num">5536 •••• •••• 4417</span>
-            <span class="pcard__foot"><i>Дебетовая</i><i>09/30</i></span>
-          </div>
-          <div class="pcard pcard--front glass" data-depth="30">
-            <span class="pcard__brand">Номинал</span>
-            <span class="pcard__num">4276 •••• •••• 0182</span>
-            <span class="pcard__foot"><i>Кредитная</i><i>11/29</i></span>
-          </div>
-          <div class="chip glass chip--a" data-depth="52"><b>до 30%</b><span>кэшбэк</span></div>
-          <div class="chip glass chip--b" data-depth="44"><b>120 дней</b><span>без процентов</span></div>
-          <div class="chip glass chip--c" data-depth="60"><b>0 ₽</b><span>обслуживание</span></div>
+          <div class="fan fan--4" style="--c:#0A2896;--c2:#4568F0"><span class="fan__chip"></span><span class="fan__num">5536 •••• 4417</span></div>
+          <div class="fan fan--3" style="--c:#067A76;--c2:#3ED6C4"><span class="fan__chip"></span><span class="fan__num">4276 •••• 0182</span></div>
+          <div class="fan fan--2" style="--c:#D6006E;--c2:#FF6BB0"><span class="fan__chip"></span><span class="fan__num">2200 •••• 7741</span></div>
+          <div class="fan fan--1" style="--c:#E8480F;--c2:#FFA23B"><span class="fan__chip"></span><span class="fan__num">4890 •••• 1129</span></div>
+
+          <div class="bub bub--a"><b>до 30%</b><span>кэшбэк</span></div>
+          <div class="bub bub--b"><b>120 дней</b><span>без процентов</span></div>
+          <div class="bub bub--c"><b>0 ₽</b><span>обслуживание</span></div>
         </div>
       </div>
     </div>
@@ -110,7 +93,7 @@
   <!-- ═══════════════ ПАРТНЁРЫ ═══════════════ -->
   <div class="strip">
     <div class="shell strip__head">
-      <p class="kicker">Работаем с банками</p>
+      <p class="eyebrow">Работаем с банками</p>
       <button class="strip__pause" type="button" aria-pressed="false">Остановить</button>
     </div>
     <div class="strip__view" id="strip">
@@ -131,8 +114,8 @@
   <section class="sec" id="products" tabindex="-1" aria-labelledby="products-t">
     <div class="shell">
       <div class="sec__head reveal">
-        <p class="kicker">Каталог</p>
-        <h2 class="display sec__title" id="products-t">Продукты</h2>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Каталог</p>
+        <h2 class="sec__title" id="products-t">Продукты</h2>
         <p class="sec__lead">Двенадцать предложений в четырёх категориях. Выберите категорию — список перестроится.</p>
       </div>
 
@@ -150,51 +133,54 @@
       <p class="fstatus" id="fstatus" role="status" aria-live="polite" aria-atomic="true">Показано 12 предложений</p>
 
       <!--
-        ╔══════════════════════════════════════════════════════════════════╗
-        ║  СЮДА ВСТАВЛЯТЬ СВОИ ПАРТНЁРСКИЕ ССЫЛКИ                          ║
-        ║  В каждой карточке — атрибут href у ссылки «Оформить».            ║
-        ║  Сейчас там href="#apply" (ведёт на форму заявки).                 ║
-        ║  Меняете на https://ссылка-партнёрки/... и добавляете              ║
-        ║  target="_blank" rel="noopener sponsored nofollow".                ║
-        ║  Цифры (ставки, лимиты, кэшбэк) — ориентировочные, поставьте свои. ║
-        ╚══════════════════════════════════════════════════════════════════╝
+        ╔══════════════════════════════════════════════════════════════════════╗
+        ║  СЮДА ВСТАВЛЯТЬ СВОИ ПАРТНЁРСКИЕ ССЫЛКИ                              ║
+        ║  У каждой карточки внизу ссылка «Оформить», сейчас href="#apply".     ║
+        ║  Меняете на https://ссылка-партнёрки/... и дописываете                ║
+        ║  target="_blank" rel="noopener sponsored nofollow".                   ║
+        ║                                                                      ║
+        ║  ЦВЕТ КАРТЫ — в style="--c:...;--c2:...;--t:..." у тега <li>:         ║
+        ║    --c  основной цвет пластика   --c2 светлый блик                   ║
+        ║    --t  цвет цифры в тексте (обязан быть тёмным, иначе не читается)   ║
+        ║  Цифры (ставки, лимиты, кэшбэк) — ориентировочные, поставьте свои.    ║
+        ╚══════════════════════════════════════════════════════════════════════╝
       -->
       <ul class="cards" id="cards" role="list">
 
         <!-- ДЕБЕТОВЫЕ -->
-        <li class="card reveal" data-cat="debit">
-          <p class="card__bank">Альфа-Банк</p>
-          <p class="card__tag">Дебетовая карта</p>
+        <li class="card reveal" data-cat="debit" style="--c:#E01F26;--c2:#FF7A6B;--t:#C4161C">
+          <div class="card__art" aria-hidden="true"><span class="card__chip"></span><span class="card__wave"></span><span class="card__num">•••• 4417</span></div>
+          <p class="card__bank">Альфа-Банк <span class="card__tag">дебетовая карта</span></p>
           <h3 class="card__title" id="p1-t">Альфа-Карта</h3>
           <p class="card__hero"><b>до 5%</b><span>кэшбэк в выбранных категориях</span></p>
           <dl class="card__spec">
-            <div><dt>Обслуживание</dt><dd>0 ₽</dd></div>
-            <div><dt>Снятие наличных</dt><dd>до 100 000 ₽ без комиссии</dd></div>
+            <div><dt>Обслуживание</dt><dd>0 ₽</dd></div>
+            <div><dt>Снятие наличных</dt><dd>до 100 000 ₽ без комиссии</dd></div>
             <div><dt>Выпуск</dt><dd>бесплатно, доставка курьером</dd></div>
           </dl>
           <a class="card__cta" id="p1-c" href="#apply" aria-labelledby="p1-c p1-t">Оформить</a>
         </li>
 
-        <li class="card reveal" data-cat="debit">
-          <p class="card__bank">Т-Банк</p>
-          <p class="card__tag">Дебетовая карта</p>
+        <li class="card reveal" data-cat="debit" style="--c:#17181C;--c2:#5A5F6B;--t:#17181C">
+          <div class="card__art card__art--dark" aria-hidden="true"><span class="card__chip"></span><span class="card__wave"></span><span class="card__num">•••• 0182</span></div>
+          <p class="card__bank">Т-Банк <span class="card__tag">дебетовая карта</span></p>
           <h3 class="card__title" id="p2-t">Карта Black</h3>
           <p class="card__hero"><b>до 30%</b><span>кэшбэк у партнёров банка</span></p>
           <dl class="card__spec">
-            <div><dt>Обслуживание</dt><dd>0 ₽ при остатке от 50 000 ₽</dd></div>
-            <div><dt>Переводы по СБП</dt><dd>до 100 000 ₽ в месяц</dd></div>
+            <div><dt>Обслуживание</dt><dd>0 ₽ при остатке от 50 000 ₽</dd></div>
+            <div><dt>Переводы по СБП</dt><dd>до 100 000 ₽ в месяц</dd></div>
             <div><dt>Процент на остаток</dt><dd>начисляется ежемесячно</dd></div>
           </dl>
           <a class="card__cta" id="p2-c" href="#apply" aria-labelledby="p2-c p2-t">Оформить</a>
         </li>
 
-        <li class="card reveal" data-cat="debit">
-          <p class="card__bank">Озон Банк</p>
-          <p class="card__tag">Дебетовая карта</p>
+        <li class="card reveal" data-cat="debit" style="--c:#1B2AE0;--c2:#7E6BFF;--t:#1F2BC7">
+          <div class="card__art" aria-hidden="true"><span class="card__chip"></span><span class="card__wave"></span><span class="card__num">•••• 7741</span></div>
+          <p class="card__bank">Озон Банк <span class="card__tag">дебетовая карта</span></p>
           <h3 class="card__title" id="p3-t">Ozon Card</h3>
           <p class="card__hero"><b>до 25%</b><span>кэшбэк баллами на маркетплейсе</span></p>
           <dl class="card__spec">
-            <div><dt>Обслуживание</dt><dd>0 ₽ без условий</dd></div>
+            <div><dt>Обслуживание</dt><dd>0 ₽ без условий</dd></div>
             <div><dt>Кэшбэк вне маркетплейса</dt><dd>до 5%</dd></div>
             <div><dt>Оформление</dt><dd>онлайн, без визита в офис</dd></div>
           </dl>
@@ -202,79 +188,79 @@
         </li>
 
         <!-- КРЕДИТНЫЕ -->
-        <li class="card reveal" data-cat="credit">
-          <p class="card__bank">Альфа-Банк</p>
-          <p class="card__tag">Кредитная карта</p>
+        <li class="card reveal" data-cat="credit" style="--c:#C81E4A;--c2:#FF6E90;--t:#B01B41">
+          <div class="card__art" aria-hidden="true"><span class="card__chip"></span><span class="card__wave"></span><span class="card__num">•••• 3610</span></div>
+          <p class="card__bank">Альфа-Банк <span class="card__tag">кредитная карта</span></p>
           <h3 class="card__title" id="p4-t">Год без процентов</h3>
           <p class="card__hero"><b>365 дней</b><span>беспроцентный период</span></p>
           <dl class="card__spec">
-            <div><dt>Лимит</dt><dd>до 500 000 ₽</dd></div>
-            <div><dt>Обслуживание</dt><dd>0 ₽ первый год</dd></div>
+            <div><dt>Лимит</dt><dd>до 500 000 ₽</dd></div>
+            <div><dt>Обслуживание</dt><dd>0 ₽ первый год</dd></div>
             <div><dt>Решение</dt><dd>за 2 минуты онлайн</dd></div>
           </dl>
           <a class="card__cta" id="p4-c" href="#apply" aria-labelledby="p4-c p4-t">Оформить</a>
         </li>
 
-        <li class="card reveal" data-cat="credit">
-          <p class="card__bank">Т-Банк</p>
-          <p class="card__tag">Кредитная карта</p>
+        <li class="card reveal" data-cat="credit" style="--c:#2C3038;--c2:#7C8390;--t:#2C3038">
+          <div class="card__art card__art--dark" aria-hidden="true"><span class="card__chip"></span><span class="card__wave"></span><span class="card__num">•••• 9052</span></div>
+          <p class="card__bank">Т-Банк <span class="card__tag">кредитная карта</span></p>
           <h3 class="card__title" id="p5-t">Платинум</h3>
           <p class="card__hero"><b>55 дней</b><span>беспроцентный период</span></p>
           <dl class="card__spec">
-            <div><dt>Лимит</dt><dd>до 1 000 000 ₽</dd></div>
+            <div><dt>Лимит</dt><dd>до 1 000 000 ₽</dd></div>
             <div><dt>Снятие наличных</dt><dd>доступно в рамках лимита</dd></div>
             <div><dt>Доставка</dt><dd>курьером на следующий день</dd></div>
           </dl>
           <a class="card__cta" id="p5-c" href="#apply" aria-labelledby="p5-c p5-t">Оформить</a>
         </li>
 
-        <li class="card reveal" data-cat="credit">
-          <p class="card__bank">Уралсиб</p>
-          <p class="card__tag">Кредитная карта</p>
+        <li class="card reveal" data-cat="credit" style="--c:#6B34E0;--c2:#B08BFF;--t:#5B2AC7">
+          <div class="card__art" aria-hidden="true"><span class="card__chip"></span><span class="card__wave"></span><span class="card__num">•••• 2284</span></div>
+          <p class="card__bank">Уралсиб <span class="card__tag">кредитная карта</span></p>
           <h3 class="card__title" id="p6-t">Прибавка</h3>
           <p class="card__hero"><b>120 дней</b><span>беспроцентный период</span></p>
           <dl class="card__spec">
-            <div><dt>Лимит</dt><dd>до 300 000 ₽</dd></div>
+            <div><dt>Лимит</dt><dd>до 300 000 ₽</dd></div>
             <div><dt>Кэшбэк</dt><dd>до 3% на всё</dd></div>
-            <div><dt>Обслуживание</dt><dd>0 ₽ при обороте от 10 000 ₽</dd></div>
+            <div><dt>Обслуживание</dt><dd>0 ₽ при обороте от 10 000 ₽</dd></div>
           </dl>
           <a class="card__cta" id="p6-c" href="#apply" aria-labelledby="p6-c p6-t">Оформить</a>
         </li>
 
         <!-- КРЕДИТЫ -->
-        <li class="card reveal" data-cat="loan">
-          <p class="card__bank">Совкомбанк</p>
-          <p class="card__tag">Кредит наличными</p>
+        <li class="card reveal" data-cat="loan" style="--c:#E8480F;--c2:#FFA23B;--t:#B8390B">
+          <div class="card__art" aria-hidden="true"><span class="card__chip"></span><span class="card__wave"></span><span class="card__num">наличными</span></div>
+          <p class="card__bank">Совкомбанк <span class="card__tag">кредит наличными</span></p>
           <h3 class="card__title" id="p7-t">Кредит на любые цели</h3>
           <p class="card__hero"><b>от 14,9%</b><span>годовых</span></p>
           <dl class="card__spec">
-            <div><dt>Сумма</dt><dd>до 5 000 000 ₽</dd></div>
+            <div><dt>Сумма</dt><dd>до 5 000 000 ₽</dd></div>
             <div><dt>Срок</dt><dd>от 6 месяцев до 5 лет</dd></div>
             <div><dt>Документы</dt><dd>паспорт и ИНН</dd></div>
           </dl>
           <a class="card__cta" id="p7-c" href="#apply" aria-labelledby="p7-c p7-t">Оформить</a>
         </li>
 
-        <li class="card reveal" data-cat="loan">
-          <p class="card__bank">Почта Банк</p>
-          <p class="card__tag">Кредит наличными</p>
+        <li class="card reveal" data-cat="loan" style="--c:#0072BC;--c2:#4FC0FF;--t:#00609F">
+          <div class="card__art" aria-hidden="true"><span class="card__chip"></span><span class="card__wave"></span><span class="card__num">наличными</span></div>
+          <p class="card__bank">Почта Банк <span class="card__tag">кредит наличными</span></p>
           <h3 class="card__title" id="p8-t">Первый почтовый</h3>
           <p class="card__hero"><b>от 15,9%</b><span>годовых</span></p>
           <dl class="card__spec">
-            <div><dt>Сумма</dt><dd>до 4 000 000 ₽</dd></div>
+            <div><dt>Сумма</dt><dd>до 4 000 000 ₽</dd></div>
             <div><dt>Решение</dt><dd>за 5 минут</dd></div>
             <div><dt>Погашение</dt><dd>досрочное без комиссии</dd></div>
           </dl>
           <a class="card__cta" id="p8-c" href="#apply" aria-labelledby="p8-c p8-t">Оформить</a>
         </li>
 
-        <li class="card reveal" data-cat="loan">
-          <p class="card__bank">Ренессанс Банк</p>
-          <p class="card__tag">Кредит наличными</p>
+        <li class="card reveal" data-cat="loan" style="--c:#B8860B;--c2:#FFD166;--t:#8A6208">
+          <div class="card__art" aria-hidden="true"><span class="card__chip"></span><span class="card__wave"></span><span class="card__num">наличными</span></div>
+          <p class="card__bank">Ренессанс Банк <span class="card__tag">кредит наличными</span></p>
           <h3 class="card__title" id="p9-t">Кредит без справок</h3>
           <p class="card__hero"><b>от 15,5%</b><span>годовых</span></p>
           <dl class="card__spec">
-            <div><dt>Сумма</dt><dd>до 3 000 000 ₽</dd></div>
+            <div><dt>Сумма</dt><dd>до 3 000 000 ₽</dd></div>
             <div><dt>Справка о доходах</dt><dd>не требуется</dd></div>
             <div><dt>Деньги</dt><dd>на карту в день одобрения</dd></div>
           </dl>
@@ -282,35 +268,35 @@
         </li>
 
         <!-- ВКЛАДЫ -->
-        <li class="card reveal" data-cat="deposit">
-          <p class="card__bank">МКБ</p>
-          <p class="card__tag">Вклад</p>
+        <li class="card reveal" data-cat="deposit" style="--c:#067A76;--c2:#3ED6C4;--t:#056662">
+          <div class="card__art" aria-hidden="true"><span class="card__chip"></span><span class="card__wave"></span><span class="card__num">вклад</span></div>
+          <p class="card__bank">МКБ <span class="card__tag">вклад</span></p>
           <h3 class="card__title" id="p10-t">Верное решение</h3>
           <p class="card__hero"><b>до 18%</b><span>годовых</span></p>
           <dl class="card__spec">
-            <div><dt>Минимальная сумма</dt><dd>10 000 ₽</dd></div>
+            <div><dt>Минимальная сумма</dt><dd>10 000 ₽</dd></div>
             <div><dt>Срок</dt><dd>от 3 до 36 месяцев</dd></div>
             <div><dt>Проценты</dt><dd>в конце срока</dd></div>
           </dl>
           <a class="card__cta" id="p10-c" href="#apply" aria-labelledby="p10-c p10-t">Оформить</a>
         </li>
 
-        <li class="card reveal" data-cat="deposit">
-          <p class="card__bank">Газпромбанк</p>
-          <p class="card__tag">Вклад</p>
+        <li class="card reveal" data-cat="deposit" style="--c:#0090D4;--c2:#6FD8FF;--t:#00668F">
+          <div class="card__art" aria-hidden="true"><span class="card__chip"></span><span class="card__wave"></span><span class="card__num">вклад</span></div>
+          <p class="card__bank">Газпромбанк <span class="card__tag">вклад</span></p>
           <h3 class="card__title" id="p11-t">Копить</h3>
           <p class="card__hero"><b>до 17,5%</b><span>годовых</span></p>
           <dl class="card__spec">
-            <div><dt>Минимальная сумма</dt><dd>15 000 ₽</dd></div>
+            <div><dt>Минимальная сумма</dt><dd>15 000 ₽</dd></div>
             <div><dt>Проценты</dt><dd>ежемесячно на карту</dd></div>
             <div><dt>Пополнение</dt><dd>в течение всего срока</dd></div>
           </dl>
           <a class="card__cta" id="p11-c" href="#apply" aria-labelledby="p11-c p11-t">Оформить</a>
         </li>
 
-        <li class="card reveal" data-cat="deposit">
-          <p class="card__bank">ВТБ</p>
-          <p class="card__tag">Накопительный счёт</p>
+        <li class="card reveal" data-cat="deposit" style="--c:#0A2896;--c2:#5A7BFF;--t:#0A2896">
+          <div class="card__art" aria-hidden="true"><span class="card__chip"></span><span class="card__wave"></span><span class="card__num">счёт</span></div>
+          <p class="card__bank">ВТБ <span class="card__tag">накопительный счёт</span></p>
           <h3 class="card__title" id="p12-t">Сейф</h3>
           <p class="card__hero"><b>до 16%</b><span>годовых на остаток</span></p>
           <dl class="card__spec">
@@ -331,27 +317,27 @@
   </section>
 
   <!-- ═══════════════ КАК ЭТО РАБОТАЕТ ═══════════════ -->
-  <section class="sec sec--sand" id="how" tabindex="-1">
+  <section class="sec sec--alt" id="how" tabindex="-1">
     <div class="shell">
       <div class="sec__head reveal">
-        <p class="kicker">Порядок</p>
-        <h2 class="display sec__title">Как это работает</h2>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Порядок</p>
+        <h2 class="sec__title">Как это работает</h2>
       </div>
 
       <ol class="steps">
-        <li class="step reveal">
+        <li class="step reveal" style="--c:#1B2AE0">
           <p class="step__n">01</p>
           <h3 class="step__t">Шаг 1. Выберите продукт</h3>
           <p class="step__d">Сравните карточки в каталоге. Ставка, лимит и комиссии написаны сразу —
             искать их в сносках не придётся.</p>
         </li>
-        <li class="step reveal">
+        <li class="step reveal" style="--c:#D6006E">
           <p class="step__n">02</p>
           <h3 class="step__t">Шаг 2. Заполните анкету</h3>
           <p class="step__d">Три поля: имя, телефон и продукт. Паспортные данные на сайте не нужны —
             их вы вводите уже на стороне банка.</p>
         </li>
-        <li class="step reveal">
+        <li class="step reveal" style="--c:#067A76">
           <p class="step__n">03</p>
           <h3 class="step__t">Шаг 3. Получите решение</h3>
           <p class="step__d">Передаём заявку в банк-партнёр. Решение приходит в тот же день,
@@ -361,26 +347,26 @@
     </div>
   </section>
 
-  <!-- ═══════════════ ТЁМНАЯ ПОЛОСА ═══════════════ -->
+  <!-- ═══════════════ ЦВЕТНАЯ ПОЛОСА ═══════════════ -->
   <section class="band">
     <span class="band__spot" aria-hidden="true"></span>
     <div class="shell">
       <div class="band__head reveal">
-        <p class="kicker kicker--on">Почему через нас</p>
-        <h2 class="display band__title" id="band-t">Считаем за вас, <em class="ital">а не вместо вас</em></h2>
+        <p class="eyebrow eyebrow--on"><span class="dot" aria-hidden="true"></span>Почему через нас</p>
+        <h2 class="band__title">Считаем за вас,<br>а не вместо вас</h2>
       </div>
       <ul class="tiles" role="list">
-        <li class="tile glass-d reveal">
+        <li class="tile reveal">
           <h3>Один список вместо двадцати вкладок</h3>
           <p>Собрали условия банков в одном формате, чтобы карты и кредиты можно было сравнивать
             по одним и тем же строкам, а не по рекламным обещаниям.</p>
         </li>
-        <li class="tile glass-d reveal">
+        <li class="tile reveal">
           <h3>Цифры до заявки, а не после</h3>
           <p>Ставка, лимит, срок и комиссии стоят на карточке. Ничего не прячем под «уточняйте
             у менеджера» и звёздочки внизу страницы.</p>
         </li>
-        <li class="tile glass-d reveal">
+        <li class="tile reveal">
           <h3>Подбор бесплатный</h3>
           <p>Вы ничего нам не платите. Вознаграждение мы получаем от банка и только за оформленную
             заявку — на ваши условия это не влияет.</p>
@@ -393,8 +379,8 @@
   <section class="sec" id="faq" tabindex="-1" aria-labelledby="faq-t">
     <div class="shell faq-grid">
       <div class="sec__head reveal faq-aside">
-        <p class="kicker">Вопросы</p>
-        <h2 class="display sec__title" id="faq-t">Частые <em class="ital">вопросы</em></h2>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Вопросы</p>
+        <h2 class="sec__title" id="faq-t">Частые вопросы</h2>
         <p class="sec__lead">Тут то, что спрашивают чаще всего. Если вашего вопроса нет —
           оставьте заявку, ответим по телефону.</p>
       </div>
@@ -403,7 +389,7 @@
         <div class="faq__i reveal">
           <h3 class="faq__h"><button class="faq__b" type="button" id="q1b" aria-expanded="false" aria-controls="q1p">
             <span>Кто принимает решение по заявке?</span>
-            <svg class="faq__chev" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span class="faq__chev" aria-hidden="true"></span>
           </button></h3>
           <div class="faq__p" id="q1p" hidden><div class="faq__in">
             <p>Только банк. Мы передаём анкету и не влияем на итоговую ставку, лимит и одобрение.
@@ -414,7 +400,7 @@
         <div class="faq__i reveal">
           <h3 class="faq__h"><button class="faq__b" type="button" id="q2b" aria-expanded="false" aria-controls="q2p">
             <span>Сколько стоит подбор?</span>
-            <svg class="faq__chev" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span class="faq__chev" aria-hidden="true"></span>
           </button></h3>
           <div class="faq__p" id="q2p" hidden><div class="faq__in">
             <p>Для вас — нисколько. Мы работаем по партнёрским программам банков и получаем
@@ -425,7 +411,7 @@
         <div class="faq__i reveal">
           <h3 class="faq__h"><button class="faq__b" type="button" id="q3b" aria-expanded="false" aria-controls="q3p">
             <span>Влияет ли заявка на кредитную историю?</span>
-            <svg class="faq__chev" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span class="faq__chev" aria-hidden="true"></span>
           </button></h3>
           <div class="faq__p" id="q3p" hidden><div class="faq__in">
             <p>Заполнение анкеты на сайте — нет: мы не делаем запросов в бюро кредитных историй.
@@ -437,7 +423,7 @@
         <div class="faq__i reveal">
           <h3 class="faq__h"><button class="faq__b" type="button" id="q4b" aria-expanded="false" aria-controls="q4p">
             <span>Какие документы понадобятся?</span>
-            <svg class="faq__chev" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span class="faq__chev" aria-hidden="true"></span>
           </button></h3>
           <div class="faq__p" id="q4p" hidden><div class="faq__in">
             <p>Для карт и вкладов — паспорт. Для кредита наличными банк может дополнительно
@@ -449,7 +435,7 @@
         <div class="faq__i reveal">
           <h3 class="faq__h"><button class="faq__b" type="button" id="q5b" aria-expanded="false" aria-controls="q5p">
             <span>Почему условия отличаются от сайта банка?</span>
-            <svg class="faq__chev" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span class="faq__chev" aria-hidden="true"></span>
           </button></h3>
           <div class="faq__p" id="q5p" hidden><div class="faq__in">
             <p>Банки меняют тарифы чаще, чем обновляются витрины. В карточках указаны базовые
@@ -461,7 +447,7 @@
         <div class="faq__i reveal">
           <h3 class="faq__h"><button class="faq__b" type="button" id="q6b" aria-expanded="false" aria-controls="q6p">
             <span>Что происходит с моими данными?</span>
-            <svg class="faq__chev" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span class="faq__chev" aria-hidden="true"></span>
           </button></h3>
           <div class="faq__p" id="q6p" hidden><div class="faq__in">
             <p>Имя и телефон уходят в банк-партнёр, к которому относится выбранный продукт.
@@ -474,11 +460,11 @@
   </section>
 
   <!-- ═══════════════ ЗАЯВКА ═══════════════ -->
-  <section class="sec sec--sand" id="apply" tabindex="-1" aria-labelledby="apply-t">
+  <section class="sec sec--alt" id="apply" tabindex="-1" aria-labelledby="apply-t">
     <div class="shell apply">
       <div class="apply__copy reveal">
-        <p class="kicker">Заявка</p>
-        <h2 class="display sec__title" id="apply-t">Оставить заявку</h2>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Заявка</p>
+        <h2 class="sec__title" id="apply-t">Оставить заявку</h2>
         <p class="apply__lead">Заполните три поля — перезвоним, уточним детали и передадим анкету
           в банк по выбранному продукту.</p>
         <ul class="apply__pts" role="list">
@@ -488,7 +474,7 @@
         </ul>
       </div>
 
-      <div class="apply__box glass reveal">
+      <div class="apply__box reveal">
         <form class="form" id="lead" novalidate>
           <p class="form__note">Все поля обязательны для заполнения.</p>
 
@@ -502,7 +488,7 @@
             <label for="f-phone">Телефон</label>
             <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required
                    aria-describedby="f-phone-h f-phone-e">
-            <p class="fld__h" id="f-phone-h">Например: +7 999 123-45-67. Можно ввести через 8 — приведём к нужному виду.</p>
+            <p class="fld__h" id="f-phone-h">Например: +7 999 123-45-67. Можно ввести через 8 — приведём к нужному виду.</p>
             <p class="fld__e" id="f-phone-e"></p>
           </div>
 
@@ -529,7 +515,7 @@
           <div class="hp" aria-hidden="true"><label for="f-site">Сайт</label>
             <input id="f-site" name="site" type="text" tabindex="-1" autocomplete="off"></div>
 
-          <button class="btn btn--ink btn--wide" type="submit">Отправить заявку</button>
+          <button class="btn btn--ink btn--wide btn--lg" type="submit">Отправить заявку</button>
 
           <p class="form__st" id="f-status" role="status" aria-live="polite" aria-atomic="true"></p>
           <p class="form__err" id="f-error" role="alert" aria-atomic="true"></p>
@@ -546,10 +532,7 @@
 
     <div class="foot__top">
       <a class="brand brand--foot" href="#top">
-        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-          <rect x="1" y="1" width="30" height="30" rx="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
-          <path d="M10 22V10l12 12V10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
-        </svg>
+        <span class="brand__mark" aria-hidden="true"></span>
         <span class="brand__word">Номинал</span>
       </a>
       <nav class="foot__nav" aria-label="Дополнительные ссылки">
@@ -569,9 +552,9 @@
       <p>Информация носит справочный характер и не является публичной офертой (ст. 437 ГК РФ).
         Итоговые условия, ставка и полная стоимость кредита определяются банком-партнёром
         в индивидуальном порядке.</p>
-      <p>Ставка по кредитам наличными — от 14,9% до 49,9% годовых, сумма от 10 000 ₽ до 5 000 000 ₽,
-        срок от 6 до 60 месяцев. Пример: 300 000 ₽ на 24 месяца под 19,9% годовых — ежемесячный
-        платёж 15 246 ₽, переплата 65 904 ₽.</p>
+      <p>Ставка по кредитам наличными — от 14,9% до 49,9% годовых, сумма от 10 000 ₽ до 5 000 000 ₽,
+        срок от 6 до 60 месяцев. Пример: 300 000 ₽ на 24 месяца под 19,9% годовых — ежемесячный
+        платёж 15 246 ₽, переплата 65 904 ₽.</p>
       <!-- Реквизиты и erid поставьте свои перед публикацией -->
       <p class="foot__req">© <span id="yr">2026</span> Номинал. ИНН 0000000000, ОГРНИП 000000000000000.</p>
     </div>
