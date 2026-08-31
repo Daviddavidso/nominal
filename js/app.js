@@ -166,6 +166,32 @@
     });
   });
 
+  /* ── параллакс карт и пятно света на тёмной полосе ─────── */
+  var fine = window.matchMedia('(pointer: fine)');
+  if (!reduce.matches && fine.matches) {
+    var scene = $('.scene');
+    if (scene) {
+      // без requestAnimationFrame: в скрытой панели превью rAF замораживается
+      window.addEventListener('mousemove', function (e) {
+        var r = scene.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > window.innerHeight) return;
+        var x = (e.clientX - (r.left + r.width / 2)) / r.width * 2;
+        var y = (e.clientY - (r.top + r.height / 2)) / r.height * 2;
+        scene.style.setProperty('--px', Math.max(-1, Math.min(1, x)).toFixed(3));
+        scene.style.setProperty('--py', Math.max(-1, Math.min(1, y)).toFixed(3));
+      }, { passive: true });
+    }
+
+    var band = $('.band');
+    if (band) {
+      band.addEventListener('mousemove', function (e) {
+        var r = band.getBoundingClientRect();
+        band.style.setProperty('--sx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+        band.style.setProperty('--sy', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+      }, { passive: true });
+    }
+  }
+
   /* ── форма заявки ──────────────────────────────────────── */
   var form = $('#lead');
   if (!form) return;

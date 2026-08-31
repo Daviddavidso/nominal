@@ -12,11 +12,19 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+
+<!-- живой фон: тёплые световые пятна + зерно. Чисто декоративный слой. -->
+<div class="ambient" aria-hidden="true">
+  <span class="ambient__b ambient__b--1"></span>
+  <span class="ambient__b ambient__b--2"></span>
+  <span class="ambient__b ambient__b--3"></span>
+</div>
+<div class="grain" aria-hidden="true"></div>
 
 <a class="skip-link" href="#main">Перейти к основному содержанию</a>
 
@@ -62,7 +70,7 @@
     <div class="shell hero__grid">
       <div class="hero__copy">
         <p class="kicker reveal">Подбор банковских продуктов</p>
-        <h1 class="display hero__title reveal">Карты, кредиты и вклады — без мелкого шрифта</h1>
+        <h1 class="display hero__title reveal">Карты, кредиты и вклады<br> <em class="ital">без мелкого шрифта</em></h1>
         <p class="hero__lead reveal">Собрали условия банков-партнёров в одном месте. Ставка, лимит и комиссии
           видно прямо на карточке — до того, как вы оставите заявку.</p>
         <div class="hero__acts reveal">
@@ -80,18 +88,20 @@
       <!-- Декоративная сцена: стопка карт. Скрыта от скринридеров. -->
       <div class="hero__art reveal" aria-hidden="true">
         <div class="scene">
-          <div class="pcard pcard--back">
+          <span class="scene__glow"></span>
+          <div class="pcard pcard--back" data-depth="14">
             <span class="pcard__brand">Номинал</span>
             <span class="pcard__num">5536 •••• •••• 4417</span>
             <span class="pcard__foot"><i>Дебетовая</i><i>09/30</i></span>
           </div>
-          <div class="pcard pcard--front glass">
+          <div class="pcard pcard--front glass" data-depth="30">
             <span class="pcard__brand">Номинал</span>
             <span class="pcard__num">4276 •••• •••• 0182</span>
             <span class="pcard__foot"><i>Кредитная</i><i>11/29</i></span>
           </div>
-          <div class="chip glass chip--a"><b>до 30%</b><span>кэшбэк</span></div>
-          <div class="chip glass chip--b"><b>120 дней</b><span>без процентов</span></div>
+          <div class="chip glass chip--a" data-depth="52"><b>до 30%</b><span>кэшбэк</span></div>
+          <div class="chip glass chip--b" data-depth="44"><b>120 дней</b><span>без процентов</span></div>
+          <div class="chip glass chip--c" data-depth="60"><b>0 ₽</b><span>обслуживание</span></div>
         </div>
       </div>
     </div>
@@ -353,10 +363,11 @@
 
   <!-- ═══════════════ ТЁМНАЯ ПОЛОСА ═══════════════ -->
   <section class="band">
+    <span class="band__spot" aria-hidden="true"></span>
     <div class="shell">
       <div class="band__head reveal">
         <p class="kicker kicker--on">Почему через нас</p>
-        <h2 class="display band__title" id="band-t">Считаем за вас, а не вместо вас</h2>
+        <h2 class="display band__title" id="band-t">Считаем за вас, <em class="ital">а не вместо вас</em></h2>
       </div>
       <ul class="tiles" role="list">
         <li class="tile glass-d reveal">
@@ -380,10 +391,12 @@
 
   <!-- ═══════════════ FAQ ═══════════════ -->
   <section class="sec" id="faq" tabindex="-1" aria-labelledby="faq-t">
-    <div class="shell shell--narrow">
-      <div class="sec__head reveal">
+    <div class="shell faq-grid">
+      <div class="sec__head reveal faq-aside">
         <p class="kicker">Вопросы</p>
-        <h2 class="display sec__title" id="faq-t">Частые вопросы</h2>
+        <h2 class="display sec__title" id="faq-t">Частые <em class="ital">вопросы</em></h2>
+        <p class="sec__lead">Тут то, что спрашивают чаще всего. Если вашего вопроса нет —
+          оставьте заявку, ответим по телефону.</p>
       </div>
 
       <div class="faq">
