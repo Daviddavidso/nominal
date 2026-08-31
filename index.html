@@ -9,11 +9,11 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="НОМИНАЛ — карты, кредиты и вклады без мелкого шрифта">
 <meta property="og:description" content="Условия банков-партнёров в одном месте. Ставка, лимит и комиссии — на карточке, до того как вы оставите заявку.">
-<link rel="icon" href="favicon.svg?v=5" type="image/svg+xml">
+<link rel="icon" href="favicon.svg?v=20260831190820" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=20260831190820">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -140,13 +140,7 @@
       <p class="ad-note reveal">Реклама. Мы получаем вознаграждение от банков-партнёров за оформленные заявки.
         На условия банка для вас это не влияет.</p>
 
-      <div class="filters reveal" role="group" aria-label="Фильтр по типу продукта">
-        <button class="chipbtn" type="button" data-filter="all" aria-pressed="true">Все</button>
-        <button class="chipbtn" type="button" data-filter="debit" aria-pressed="false">Дебетовые карты</button>
-        <button class="chipbtn" type="button" data-filter="credit" aria-pressed="false">Кредитные карты</button>
-        <button class="chipbtn" type="button" data-filter="loan" aria-pressed="false">Кредиты наличными</button>
-        <button class="chipbtn" type="button" data-filter="deposit" aria-pressed="false">Вклады</button>
-      </div>
+      <div class="filters reveal" role="group" aria-label="Фильтр по типу продукта"></div>
 
       <p class="fstatus" id="fstatus" role="status" aria-live="polite" aria-atomic="true">Показано 12 предложений</p>
 
@@ -163,204 +157,12 @@
         ║  Цифры (ставки, лимиты, кэшбэк) — ориентировочные, поставьте свои.    ║
         ╚══════════════════════════════════════════════════════════════════════╝
       -->
-      <ul class="cards" id="cards" role="list">
+      <ul class="cards" id="cards" role="list"></ul>
 
-        <!-- ДЕБЕТОВЫЕ -->
-        <li class="card reveal" data-cat="debit" style="--c:#E01F26;--c2:#FF7A6B;--t:#C4161C">
-          <div class="card__head">
-            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-alfa"/></svg></span>
-            <span class="card__bankname">Альфа-Банк</span>
-            <span class="card__tag">дебетовая карта</span>
-          </div>
-          <h3 class="card__title" id="p1-t">Альфа-Карта</h3>
-          <p class="card__hero"><b>до 5%</b><span>кэшбэк в выбранных категориях</span></p>
-          <dl class="card__spec">
-            <div><dt>Обслуживание</dt><dd>0 ₽</dd></div>
-            <div><dt>Снятие наличных</dt><dd>до 100 000 ₽ без комиссии</dd></div>
-            <div><dt>Выпуск</dt><dd>бесплатно, доставка курьером</dd></div>
-          </dl>
-          <a class="card__cta" id="p1-c" href="#apply" aria-labelledby="p1-c p1-t">Оформить</a>
-        </li>
-
-        <li class="card reveal" data-cat="debit" style="--c:#17181C;--c2:#5A5F6B;--t:#17181C">
-          <div class="card__head">
-            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-tbank"/></svg></span>
-            <span class="card__bankname">Т-Банк</span>
-            <span class="card__tag">дебетовая карта</span>
-          </div>
-          <h3 class="card__title" id="p2-t">Карта Black</h3>
-          <p class="card__hero"><b>до 30%</b><span>кэшбэк у партнёров банка</span></p>
-          <dl class="card__spec">
-            <div><dt>Обслуживание</dt><dd>0 ₽ при остатке от 50 000 ₽</dd></div>
-            <div><dt>Переводы по СБП</dt><dd>до 100 000 ₽ в месяц</dd></div>
-            <div><dt>Процент на остаток</dt><dd>начисляется ежемесячно</dd></div>
-          </dl>
-          <a class="card__cta" id="p2-c" href="#apply" aria-labelledby="p2-c p2-t">Оформить</a>
-        </li>
-
-        <li class="card reveal" data-cat="debit" style="--c:#1B2AE0;--c2:#7E6BFF;--t:#1F2BC7">
-          <div class="card__head">
-            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-ozon"/></svg></span>
-            <span class="card__bankname">Озон Банк</span>
-            <span class="card__tag">дебетовая карта</span>
-          </div>
-          <h3 class="card__title" id="p3-t">Ozon Card</h3>
-          <p class="card__hero"><b>до 25%</b><span>кэшбэк баллами на маркетплейсе</span></p>
-          <dl class="card__spec">
-            <div><dt>Обслуживание</dt><dd>0 ₽ без условий</dd></div>
-            <div><dt>Кэшбэк вне маркетплейса</dt><dd>до 5%</dd></div>
-            <div><dt>Оформление</dt><dd>онлайн, без визита в офис</dd></div>
-          </dl>
-          <a class="card__cta" id="p3-c" href="#apply" aria-labelledby="p3-c p3-t">Оформить</a>
-        </li>
-
-        <!-- КРЕДИТНЫЕ -->
-        <li class="card reveal" data-cat="credit" style="--c:#C81E4A;--c2:#FF6E90;--t:#B01B41">
-          <div class="card__head">
-            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-alfa"/></svg></span>
-            <span class="card__bankname">Альфа-Банк</span>
-            <span class="card__tag">кредитная карта</span>
-          </div>
-          <h3 class="card__title" id="p4-t">Год без процентов</h3>
-          <p class="card__hero"><b>365 дней</b><span>беспроцентный период</span></p>
-          <dl class="card__spec">
-            <div><dt>Лимит</dt><dd>до 500 000 ₽</dd></div>
-            <div><dt>Обслуживание</dt><dd>0 ₽ первый год</dd></div>
-            <div><dt>Решение</dt><dd>за 2 минуты онлайн</dd></div>
-          </dl>
-          <a class="card__cta" id="p4-c" href="#apply" aria-labelledby="p4-c p4-t">Оформить</a>
-        </li>
-
-        <li class="card reveal" data-cat="credit" style="--c:#2C3038;--c2:#7C8390;--t:#2C3038">
-          <div class="card__head">
-            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-tbank"/></svg></span>
-            <span class="card__bankname">Т-Банк</span>
-            <span class="card__tag">кредитная карта</span>
-          </div>
-          <h3 class="card__title" id="p5-t">Платинум</h3>
-          <p class="card__hero"><b>55 дней</b><span>беспроцентный период</span></p>
-          <dl class="card__spec">
-            <div><dt>Лимит</dt><dd>до 1 000 000 ₽</dd></div>
-            <div><dt>Снятие наличных</dt><dd>доступно в рамках лимита</dd></div>
-            <div><dt>Доставка</dt><dd>курьером на следующий день</dd></div>
-          </dl>
-          <a class="card__cta" id="p5-c" href="#apply" aria-labelledby="p5-c p5-t">Оформить</a>
-        </li>
-
-        <li class="card reveal" data-cat="credit" style="--c:#6B34E0;--c2:#B08BFF;--t:#5B2AC7">
-          <div class="card__head">
-            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-uralsib"/></svg></span>
-            <span class="card__bankname">Уралсиб</span>
-            <span class="card__tag">кредитная карта</span>
-          </div>
-          <h3 class="card__title" id="p6-t">Прибавка</h3>
-          <p class="card__hero"><b>120 дней</b><span>беспроцентный период</span></p>
-          <dl class="card__spec">
-            <div><dt>Лимит</dt><dd>до 300 000 ₽</dd></div>
-            <div><dt>Кэшбэк</dt><dd>до 3% на всё</dd></div>
-            <div><dt>Обслуживание</dt><dd>0 ₽ при обороте от 10 000 ₽</dd></div>
-          </dl>
-          <a class="card__cta" id="p6-c" href="#apply" aria-labelledby="p6-c p6-t">Оформить</a>
-        </li>
-
-        <!-- КРЕДИТЫ -->
-        <li class="card reveal" data-cat="loan" style="--c:#E8480F;--c2:#FFA23B;--t:#B8390B">
-          <div class="card__head">
-            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-sovcom"/></svg></span>
-            <span class="card__bankname">Совкомбанк</span>
-            <span class="card__tag">кредит наличными</span>
-          </div>
-          <h3 class="card__title" id="p7-t">Кредит на любые цели</h3>
-          <p class="card__hero"><b>от 14,9%</b><span>годовых</span></p>
-          <dl class="card__spec">
-            <div><dt>Сумма</dt><dd>до 5 000 000 ₽</dd></div>
-            <div><dt>Срок</dt><dd>от 6 месяцев до 5 лет</dd></div>
-            <div><dt>Документы</dt><dd>паспорт и ИНН</dd></div>
-          </dl>
-          <a class="card__cta" id="p7-c" href="#apply" aria-labelledby="p7-c p7-t">Оформить</a>
-        </li>
-
-        <li class="card reveal" data-cat="loan" style="--c:#0072BC;--c2:#4FC0FF;--t:#00609F">
-          <div class="card__head">
-            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-pochta"/></svg></span>
-            <span class="card__bankname">Почта Банк</span>
-            <span class="card__tag">кредит наличными</span>
-          </div>
-          <h3 class="card__title" id="p8-t">Первый почтовый</h3>
-          <p class="card__hero"><b>от 15,9%</b><span>годовых</span></p>
-          <dl class="card__spec">
-            <div><dt>Сумма</dt><dd>до 4 000 000 ₽</dd></div>
-            <div><dt>Решение</dt><dd>за 5 минут</dd></div>
-            <div><dt>Погашение</dt><dd>досрочное без комиссии</dd></div>
-          </dl>
-          <a class="card__cta" id="p8-c" href="#apply" aria-labelledby="p8-c p8-t">Оформить</a>
-        </li>
-
-        <li class="card reveal" data-cat="loan" style="--c:#B8860B;--c2:#FFD166;--t:#8A6208">
-          <div class="card__head">
-            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-renaissance"/></svg></span>
-            <span class="card__bankname">Ренессанс Банк</span>
-            <span class="card__tag">кредит наличными</span>
-          </div>
-          <h3 class="card__title" id="p9-t">Кредит без справок</h3>
-          <p class="card__hero"><b>от 15,5%</b><span>годовых</span></p>
-          <dl class="card__spec">
-            <div><dt>Сумма</dt><dd>до 3 000 000 ₽</dd></div>
-            <div><dt>Справка о доходах</dt><dd>не требуется</dd></div>
-            <div><dt>Деньги</dt><dd>на карту в день одобрения</dd></div>
-          </dl>
-          <a class="card__cta" id="p9-c" href="#apply" aria-labelledby="p9-c p9-t">Оформить</a>
-        </li>
-
-        <!-- ВКЛАДЫ -->
-        <li class="card reveal" data-cat="deposit" style="--c:#067A76;--c2:#3ED6C4;--t:#056662">
-          <div class="card__head">
-            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-mkb"/></svg></span>
-            <span class="card__bankname">МКБ</span>
-            <span class="card__tag">вклад</span>
-          </div>
-          <h3 class="card__title" id="p10-t">Верное решение</h3>
-          <p class="card__hero"><b>до 18%</b><span>годовых</span></p>
-          <dl class="card__spec">
-            <div><dt>Минимальная сумма</dt><dd>10 000 ₽</dd></div>
-            <div><dt>Срок</dt><dd>от 3 до 36 месяцев</dd></div>
-            <div><dt>Проценты</dt><dd>в конце срока</dd></div>
-          </dl>
-          <a class="card__cta" id="p10-c" href="#apply" aria-labelledby="p10-c p10-t">Оформить</a>
-        </li>
-
-        <li class="card reveal" data-cat="deposit" style="--c:#0090D4;--c2:#6FD8FF;--t:#00668F">
-          <div class="card__head">
-            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-gpb"/></svg></span>
-            <span class="card__bankname">Газпромбанк</span>
-            <span class="card__tag">вклад</span>
-          </div>
-          <h3 class="card__title" id="p11-t">Копить</h3>
-          <p class="card__hero"><b>до 17,5%</b><span>годовых</span></p>
-          <dl class="card__spec">
-            <div><dt>Минимальная сумма</dt><dd>15 000 ₽</dd></div>
-            <div><dt>Проценты</dt><dd>ежемесячно на карту</dd></div>
-            <div><dt>Пополнение</dt><dd>в течение всего срока</dd></div>
-          </dl>
-          <a class="card__cta" id="p11-c" href="#apply" aria-labelledby="p11-c p11-t">Оформить</a>
-        </li>
-
-        <li class="card reveal" data-cat="deposit" style="--c:#0A2896;--c2:#5A7BFF;--t:#0A2896">
-          <div class="card__head">
-            <span class="blogo" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#lg-vtb"/></svg></span>
-            <span class="card__bankname">ВТБ</span>
-            <span class="card__tag">накопительный счёт</span>
-          </div>
-          <h3 class="card__title" id="p12-t">Сейф</h3>
-          <p class="card__hero"><b>до 16%</b><span>годовых на остаток</span></p>
-          <dl class="card__spec">
-            <div><dt>Минимальная сумма</dt><dd>без ограничений</dd></div>
-            <div><dt>Снятие</dt><dd>в любой момент без потери процентов</dd></div>
-            <div><dt>Открытие</dt><dd>онлайн за минуту</dd></div>
-          </dl>
-          <a class="card__cta" id="p12-c" href="#apply" aria-labelledby="p12-c p12-t">Оформить</a>
-        </li>
-      </ul>
+      <noscript>
+        <p class="cards__empty">Каталог загружается скриптом. Включите JavaScript,
+          чтобы увидеть предложения.</p>
+      </noscript>
 
       <p class="cards__empty" id="cards-empty" hidden>В этой категории пока нет предложений.
         Выберите другую или посмотрите все.</p>
@@ -615,6 +417,12 @@
   </div>
 </footer>
 
-<script src="js/app.js?v=5"></script>
+<!-- Каталог грузится через PHP: так правки из админки видны сразу,
+     а не через 45 суток, пока держится кеш nginx на .js файлах.
+     Если PHP на хостинге нет, ниже подхватывается обычный data.js. -->
+<script src="data.php"></script>
+<script>if(typeof OFFERS==="undefined"){document.write('<script src="data.js"><\/script>');}</script>
+<script src="js/catalog.js?v=20260831190820"></script>
+<script src="js/app.js?v=20260831190820"></script>
 </body>
 </html>
