@@ -166,10 +166,22 @@
     });
   });
 
+  /* ── веер карт: стопка → раскрытие ─────────────────────── */
+  var scene = $('.scene');
+  if (scene) {
+    if (reduce.matches) {
+      scene.classList.add('is-open', 'is-live');
+    } else {
+      // setTimeout, а не requestAnimationFrame: в скрытой панели превью rAF замораживается
+      setTimeout(function () { scene.classList.add('is-open'); }, 420);
+      // с запасом после раскрытия (0.42 + 0.27 задержки + 0.85 хода = 1.54 с)
+      setTimeout(function () { scene.classList.add('is-live'); }, 2600);
+    }
+  }
+
   /* ── параллакс карт и пятно света на тёмной полосе ─────── */
   var fine = window.matchMedia('(pointer: fine)');
   if (!reduce.matches && fine.matches) {
-    var scene = $('.scene');
     if (scene) {
       // без requestAnimationFrame: в скрытой панели превью rAF замораживается
       window.addEventListener('mousemove', function (e) {

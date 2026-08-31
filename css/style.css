@@ -245,6 +245,33 @@ a{ color: inherit; }
 .fan--3{ transform: translate3d(calc(-50% + var(--px)*14px), calc(-50% + var(--py)*14px), 0) rotate(4deg)  translate(10%, -10%); }
 .fan--4{ transform: translate3d(calc(-50% + var(--px)*8px),  calc(-50% + var(--py)*8px), 0)  rotate(14deg) translate(30%, -24%); }
 
+/* ── раскрытие веера при загрузке ──────────────────────────
+   До класса .is-open карты лежат стопкой, потом расходятся
+   лепестками. Правила ниже специфичнее .fan--N, поэтому
+   перебивают их. Без JS класс .js не появится, стопка не
+   сработает и карты сразу нарисуются веером. */
+.js .scene:not(.is-open) .fan{ transition-duration: 0s; }
+.js .scene:not(.is-open) .fan--4{ transform: translate(-50%,-50%) rotate(-5deg) scale(.90); }
+.js .scene:not(.is-open) .fan--3{ transform: translate(-50%,-50%) rotate(-2deg) scale(.92); }
+.js .scene:not(.is-open) .fan--2{ transform: translate(-50%,-50%) rotate(2deg)  scale(.94); }
+.js .scene:not(.is-open) .fan--1{ transform: translate(-50%,-50%) rotate(5deg)  scale(.96); }
+.js .scene:not(.is-open) .bub{ opacity: 0; transform: scale(.84) translateY(8px); }
+
+.scene .fan{ transition: transform .85s cubic-bezier(.18,.86,.24,1.06); }
+.scene .bub{ transition: transform .55s cubic-bezier(.18,.9,.24,1.12), opacity .4s ease; }
+
+.scene.is-open .fan--4{ transition-delay: .00s; }
+.scene.is-open .fan--3{ transition-delay: .09s; }
+.scene.is-open .fan--2{ transition-delay: .18s; }
+.scene.is-open .fan--1{ transition-delay: .27s; }
+.scene.is-open .bub--a{ transition-delay: .52s; }
+.scene.is-open .bub--c{ transition-delay: .60s; }
+.scene.is-open .bub--b{ transition-delay: .68s; }
+
+/* веер раскрылся — дальше короткая реакция на курсор, без задержек */
+.scene.is-live .fan,
+.scene.is-live .bub{ transition-duration: .45s; transition-delay: 0s; }
+
 .bub{
   position: absolute; padding: 11px 15px; border-radius: 14px;
   display: grid; gap: 1px;
@@ -351,17 +378,27 @@ a{ color: inherit; }
     linear-gradient(155deg, rgba(255,255,255,.20) 0%, rgba(255,255,255,0) 42%),
     linear-gradient(140deg, var(--c2) 0%, var(--c) 58%);
 }
+.card__top{ display: flex; align-items: center; gap: 10px; }
 .card__chip{
-  width: 32px; height: 24px; border-radius: 5px;
+  width: 32px; height: 24px; border-radius: 5px; flex: none;
   background: linear-gradient(135deg, #F6E4A8 0%, #C9A24A 55%, #F3D98B 100%);
   box-shadow: inset 0 0 0 1px rgba(0,0,0,.14);
 }
 /* «волны» бесконтактной оплаты */
 .card__wave{
-  position: absolute; top: 18px; right: 16px; width: 20px; height: 24px;
+  width: 16px; height: 20px; flex: none;
   border-radius: 50%;
   border: 2px solid rgba(255,255,255,.55); border-left-color: transparent; border-bottom-color: transparent;
   transform: rotate(-45deg);
+}
+/* Название банка на пластике. Блок card__art помечен aria-hidden,
+   поэтому скринридер прочитает банк один раз — из строки под картой.
+   Захотите настоящий логотип — замените span на <img src="img/банк.svg" alt=""> */
+.card__logo{
+  margin-left: auto; max-width: 58%;
+  font-size: 14px; font-weight: 700; letter-spacing: -.02em;
+  color: #fff; text-align: right; line-height: 1.15;
+  text-shadow: 0 1px 3px rgba(0,0,0,.28);
 }
 .card__num{
   font-family: var(--mono); font-size: 12px; letter-spacing: .08em;
