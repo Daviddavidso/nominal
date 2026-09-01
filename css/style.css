@@ -373,7 +373,12 @@ a{ color: inherit; }
   box-shadow: 0 6px 16px -6px var(--c);
 }
 .blogo svg{ width: 28px; height: 28px; }
-.blogo img{ width: 100%; height: 100%; border-radius: inherit; object-fit: contain; background: #fff; }
+.blogo img{ width: 100%; height: 100%; border-radius: inherit; object-fit: cover; display: block; }
+/* у настоящих логотипов свой фон (у Альфы белый, у Т-Банка жёлтый) —
+   плашку под ними не красим, только подрезаем углы и даём тонкий кант */
+.blogo--img{ background: #fff; box-shadow: none; border: 1px solid var(--line); overflow: hidden; padding: 0; }
+.plogo--img{ background: #fff; border: 1px solid var(--line); overflow: hidden; }
+.plogo--img img{ width: 100%; height: 100%; object-fit: cover; display: block; }
 .blogo__ini{ font-size: 17px; font-weight: 800; letter-spacing: -.02em; color: var(--ci, #fff); }
 .card__bankname{ font-size: 16px; font-weight: 700; letter-spacing: -.02em; }
 

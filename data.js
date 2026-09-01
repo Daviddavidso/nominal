@@ -52,7 +52,7 @@ const OFFERS = [
     "tag": "дебетовая карта",
     "title": "Альфа-Карта",
     "mark": "lg-alfa",
-    "logo": "",
+    "logo": "img/logos/alfabank.png",
     "tone": {
       "bg": "#E01F26",
       "ink": "#FFFFFF"
@@ -81,7 +81,7 @@ const OFFERS = [
     "tag": "дебетовая карта",
     "title": "Карта Black",
     "mark": "lg-tbank",
-    "logo": "",
+    "logo": "img/logos/tbank.png",
     "tone": {
       "bg": "#17181C",
       "ink": "#FFFFFF"
@@ -110,7 +110,7 @@ const OFFERS = [
     "tag": "дебетовая карта",
     "title": "Ozon Card",
     "mark": "lg-ozon",
-    "logo": "",
+    "logo": "img/logos/ozon.png",
     "tone": {
       "bg": "#1B2AE0",
       "ink": "#FFFFFF"
@@ -139,7 +139,7 @@ const OFFERS = [
     "tag": "кредитная карта",
     "title": "Год без процентов",
     "mark": "lg-alfa",
-    "logo": "",
+    "logo": "img/logos/alfabank.png",
     "tone": {
       "bg": "#C81E4A",
       "ink": "#FFFFFF"
@@ -168,7 +168,7 @@ const OFFERS = [
     "tag": "кредитная карта",
     "title": "Платинум",
     "mark": "lg-tbank",
-    "logo": "",
+    "logo": "img/logos/tbank.png",
     "tone": {
       "bg": "#2C3038",
       "ink": "#FFFFFF"
@@ -197,7 +197,7 @@ const OFFERS = [
     "tag": "кредитная карта",
     "title": "Прибавка",
     "mark": "lg-uralsib",
-    "logo": "",
+    "logo": "img/logos/uralsib.png",
     "tone": {
       "bg": "#6B34E0",
       "ink": "#FFFFFF"
@@ -226,7 +226,7 @@ const OFFERS = [
     "tag": "кредит наличными",
     "title": "Кредит на любые цели",
     "mark": "lg-sovcom",
-    "logo": "",
+    "logo": "img/logos/sovcombank.png",
     "tone": {
       "bg": "#E8480F",
       "ink": "#FFFFFF"
@@ -255,7 +255,7 @@ const OFFERS = [
     "tag": "кредит наличными",
     "title": "Первый почтовый",
     "mark": "lg-pochta",
-    "logo": "",
+    "logo": "img/logos/pochtabank.png",
     "tone": {
       "bg": "#0072BC",
       "ink": "#FFFFFF"
@@ -284,7 +284,7 @@ const OFFERS = [
     "tag": "кредит наличными",
     "title": "Кредит без справок",
     "mark": "lg-renaissance",
-    "logo": "",
+    "logo": "img/logos/rencredit.png",
     "tone": {
       "bg": "#B8860B",
       "ink": "#FFFFFF"
@@ -309,13 +309,13 @@ const OFFERS = [
   },
   {
     "cat": "deposit",
-    "partner": "МКБ",
+    "partner": "Сбербанк",
     "tag": "вклад",
     "title": "Верное решение",
-    "mark": "lg-mkb",
-    "logo": "",
+    "mark": "lg-sber",
+    "logo": "img/logos/sberbank.png",
     "tone": {
-      "bg": "#067A76",
+      "bg": "#1A9F29",
       "ink": "#FFFFFF"
     },
     "headline": "до 18%",
@@ -342,7 +342,7 @@ const OFFERS = [
     "tag": "вклад",
     "title": "Копить",
     "mark": "lg-gpb",
-    "logo": "",
+    "logo": "img/logos/gazprombank.png",
     "tone": {
       "bg": "#0090D4",
       "ink": "#FFFFFF"
@@ -371,7 +371,7 @@ const OFFERS = [
     "tag": "накопительный счёт",
     "title": "Сейф",
     "mark": "lg-vtb",
-    "logo": "",
+    "logo": "img/logos/vtb.png",
     "tone": {
       "bg": "#0A2896",
       "ink": "#FFFFFF"

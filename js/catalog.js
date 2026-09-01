@@ -72,8 +72,9 @@
     var href = (o.url || '').trim() || '#apply';
     var ext = href.indexOf('http') === 0;
 
-    var badge = o.logo
-      ? '<img src="' + esc(o.logo) + '" alt="" width="46" height="46">'
+    var hasImg = !!(o.logo || '').trim();
+    var badge = hasImg
+      ? '<img src="' + esc(o.logo) + '" alt="" width="46" height="46" loading="lazy">'
       : (o.mark
           ? '<svg viewBox="0 0 32 32" focusable="false"><use href="#' + esc(o.mark) + '"/></svg>'
           : '<span class="blogo__ini">' + esc(initials(o.partner)) + '</span>');
@@ -85,7 +86,7 @@
     return '<li class="card reveal" data-cat="' + esc(o.cat) + '"' +
              ' style="--c:' + esc(bg) + ';--ci:' + esc(ink) + ';--t:' + esc(accentOf(bg)) + '">' +
              '<div class="card__head">' +
-               '<span class="blogo" aria-hidden="true">' + badge + '</span>' +
+               '<span class="blogo' + (hasImg ? ' blogo--img' : '') + '" aria-hidden="true">' + badge + '</span>' +
                '<span class="card__bankname">' + esc(o.partner) + '</span>' +
                (o.tag ? '<span class="card__tag">' + esc(o.tag) + '</span>' : '') +
              '</div>' +
