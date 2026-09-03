@@ -1,0 +1,5 @@
+# clearinfinance.online — зеркало. Основной адрес сайта: https://clearinfinance.ru
+# Проверочные файлы Let's Encrypt (/.well-known/) отдаём отсюда, не перекидываем.
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteRule ^(.*)$ https://clearinfinance.ru/$1 [R=301,L]
