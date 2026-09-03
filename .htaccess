@@ -1,0 +1,64 @@
+# Служебные файлы закрыты от чужих глаз. Основная защита не здесь: заявки и
+# файлы бота лежат в папке .nominal-private НАД корнем сайта, куда веб-сервер
+# не ходит вовсе. Это второй рубеж — на случай хостинга, где выше корня
+# писать нельзя и файлы падают рядом с сайтом.
+<FilesMatch "^(leads\.csv|published\.json|\.admin-pass|\.login-tries|\.tg-.*|data\.js\.prev|data\.js\.tmp|README\.md)$">
+  Require all denied
+</FilesMatch>
+
+# На старых Apache директива выше не сработает — дублируем по-старому.
+<IfModule !mod_authz_core.c>
+  <FilesMatch "^(leads\.csv|published\.json|\.admin-pass|\.login-tries|\.tg-.*|data\.js\.prev|data\.js\.tmp|README\.md)$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+</IfModule>
+
+# Панель управления не индексируем.
+<IfModule mod_headers.c>
+  <FilesMatch "^(panel|admin)\.html$">
+    Header set X-Robots-Tag "noindex, nofollow"
+  </FilesMatch>
+</IfModule>
+
+# Заголовки безопасности.
+<IfModule mod_headers.c>
+  # Браузер не должен угадывать тип файла: подсунутый под видом картинки
+  # скрипт не выполнится.
+  Header always set X-Content-Type-Options "nosniff"
+  # Чужой сайт не сможет спрятать нашу страницу в невидимый iframe.
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # На чужие адреса уходит только домен, без пути.
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+</IfModule>
+
+# Сжатие.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
+
+# Страницы не кэшируем: иначе браузер клиента держит старый html, а тот
+# тянет старые .css и .js с прежней меткой ?v= — и правки «не доезжают».
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  # PHP отдаёт каталог со своими заголовками — mod_expires не должен спорить.
+  <FilesMatch "\.php$">
+    ExpiresActive Off
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  # Каталог правит клиент из панели, и версия в ссылке при этом не меняется.
+  <FilesMatch "^data\.js$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>

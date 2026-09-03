@@ -170,6 +170,12 @@
 
   var timers = {};
   function say(text, assertive) {
+    /* Диктор ядра панели, если он есть: один писатель на живую область,
+       иначе два таймера затирают сообщения друг друга. */
+    if (window.PANEL && typeof window.PANEL.announce === 'function') {
+      window.PANEL.announce(text, assertive);
+      return;
+    }
     var node = assertive ? alert : live;
     var key = assertive ? 'a' : 's';
     clearTimeout(timers[key]);
@@ -178,8 +184,15 @@
     timers[key] = setTimeout(function () { node.textContent = text; }, 80);
   }
 
+  /* Фокус из кода должен быть виден и после работы мышью. */
   function focusRing(node) {
     if (!node) return;
+    if (window.PANEL && typeof window.PANEL.focusRing === 'function') { window.PANEL.focusRing(node); return; }
+    node.classList.add('js-ring');
+    node.addEventListener('blur', function once() {
+      node.classList.remove('js-ring');
+      node.removeEventListener('blur', once);
+    });
     node.focus();
   }
 
@@ -279,6 +292,11 @@
 
       if (res.status === 401) {
         authed = false;
+        /* С экраном входа сессию продлевают там, а не в нашем диалоге. */
+        if (window.PANEL && typeof window.PANEL.lock === 'function') {
+          window.PANEL.lock('сессия истекла — войдите заново и нажмите «Сохранить на сайт» ещё раз. Правки на месте.');
+          return;
+        }
         afterLogin = function () { run(action); };
         openAuth();
         return;
@@ -288,6 +306,11 @@
       authed = true;
       lastPublished = res.data.published || lastPublished;
       published = action === 'rollback' ? null : hashOf(snapshot());
+      /* Витрина может захотеть узнать, что её версия уехала на сайт
+         (например, чтобы сбросить предупреждение про чужие правки). */
+      if (action !== 'rollback' && typeof cfg.onPublished === 'function') {
+        try { cfg.onPublished(); } catch (e) { /* не мешаем публикации */ }
+      }
       btnOut.hidden = false; btnZip.hidden = false; btnRoll.hidden = false;
       refresh();
       say(action === 'rollback'
@@ -343,6 +366,20 @@
       var y = document.getElementById('ask-yes');
       if (y.getAttribute('data-pub-run') === '1') { y.removeAttribute('data-pub-run'); pendingRun = null; }
     });
+    /* Escape закрывает диалог мимо обеих кнопок. Без этого наше
+       подтверждение оставалось бы взведённым, и следующее «Удалить» в
+       чужом диалоге заодно выгрузило бы каталог на боевой сайт.
+       Событие close приходит и на Escape, и на close(), но отдельной
+       задачей — уже после того, как нажатие отработало. */
+    var disarm = function () {
+      var y = document.getElementById('ask-yes');
+      if (y) y.removeAttribute('data-pub-run');
+      pendingRun = null;
+    };
+    /* cancel приходит сразу по Escape, close — и по Escape, и по close():
+       вешаем оба, чтобы взведённое подтверждение не пережило закрытие. */
+    shellAsk.addEventListener('cancel', disarm);
+    shellAsk.addEventListener('close', disarm);
   }
 
   el('c-no', confirmDlg).addEventListener('click', function () {
@@ -387,8 +424,25 @@
     api('logout').then(function () {
       authed = false;
       btnOut.hidden = true;
+      /* С экраном входа выход — это возврат на него. Черновик переживает
+         перезагрузку: он лежит в localStorage и дописывается на pagehide. */
+      if (window.PANEL_GATE) { location.reload(); return; }
       say('Вы вышли. Правки остались в браузере.');
     }).catch(function () { say('Связи с сайтом нет.', true); });
+  });
+
+  /* Экран входа (gate.js) логинит человека сам, мимо нашего диалога. Как
+     только он пустил в редактор, спрашиваем сервер заново — иначе кнопки
+     «Выйти», «Вернуть предыдущую версию» и «Скачать сайт» появлялись бы
+     только после первого сохранения. */
+  document.addEventListener('panel:unlocked', function () {
+    api('state', null, 15000).then(function (res) {
+      if (!(res.data && res.data.ok)) return;
+      authed = !!res.data.auth;
+      lastPublished = res.data.published || lastPublished;
+      btnOut.hidden = !authed; btnZip.hidden = !authed; btnRoll.hidden = !authed;
+      refresh();
+    }).catch(function () { /* без api.php публикация и так выключена */ });
   });
 
   btnZip.addEventListener('click', function () {

@@ -1,12 +1,15 @@
 /* ═══════════════════════════════════════════════════════════
    НОМИНАЛ — скрипты витрины
-   Куда отправляются заявки: см. send.php рядом с index.html
+   Заявки принимает api.php (действие lead): пишет в файл и шлёт в Telegram
+   получателям, подключённым через панель управления.
    ═══════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  var ENDPOINT = 'send.php';                 // ← обработчик заявок
-  var TG_FALLBACK = '';                      // ← напр. 'https://t.me/nickname' — покажем, если отправка не прошла
+  var ENDPOINT = 'api.php?action=lead';      // ← обработчик заявок
+  /* Ссылка на Telegram из панели («Тексты сайта»): показывается, если
+     отправка не прошла. catalog.js кладёт тексты сайта в window.NOMINAL. */
+  var TG_FALLBACK = (window.NOMINAL && window.NOMINAL.site && window.NOMINAL.site.telegram) || '';
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   var $  = function (s, r) { return (r || document).querySelector(s); };

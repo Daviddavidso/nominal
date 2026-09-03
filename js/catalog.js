@@ -5,9 +5,43 @@
 (function () {
   'use strict';
 
+  /* Каталог объявлен в data.php/data.js глобальными const, а const мимо
+     window не переприсвоить — поэтому работаем с локальными переменными.
+     На адресе с ?draft=1 в них ложится черновик из панели (его кладёт
+     panel.html кнопкой «Предпросмотр»), на боевом адресе ничего не меняется. */
+  var site   = typeof SITE       !== 'undefined' ? SITE       : {};
+  var cats   = typeof CATEGORIES !== 'undefined' ? CATEGORIES : [];
+  var offers = typeof OFFERS     !== 'undefined' ? OFFERS     : [];
+
+  if (/[?&]draft/.test(location.search)) {
+    try {
+      var draftFile = localStorage.getItem('nominal_admin_draft:file');
+      if (draftFile) {
+        var d = new Function(draftFile + '\n;return { SITE: SITE, CATEGORIES: CATEGORIES, OFFERS: OFFERS };')();
+        site = d.SITE || site; cats = d.CATEGORIES || cats; offers = d.OFFERS || offers;
+      }
+    } catch (e) { /* битый черновик — показываем боевой каталог */ }
+  }
+  /* app.js берёт отсюда ссылку на Telegram для подсказки в форме. */
+  window.NOMINAL = { site: site };
+
+  /* ── тексты сайта из панели ── */
+  if (site.brand) {
+    Array.prototype.forEach.call(document.querySelectorAll('.brand__word'), function (n) {
+      n.textContent = site.brand;
+    });
+  }
+  var eyebrow = document.querySelector('.hero .eyebrow');
+  if (eyebrow && site.tagline) {
+    var dot = eyebrow.querySelector('.dot');
+    eyebrow.textContent = '';
+    if (dot) eyebrow.appendChild(dot);
+    eyebrow.appendChild(document.createTextNode(site.tagline));
+  }
+
   var grid = document.getElementById('cards');
   var filters = document.querySelector('.filters');
-  if (!grid || typeof OFFERS === 'undefined') return;
+  if (!grid) return;
 
   /* ── цвет крупной цифры ──────────────────────────────────
      Берём цвет плашки и затемняем, пока он не даст 4.5:1 на белом.
@@ -47,22 +81,20 @@
   }
 
   var ctaOf = {};
-  if (typeof CATEGORIES !== 'undefined') {
-    CATEGORIES.forEach(function (c) { ctaOf[c.id] = c.cta || 'Оформить'; });
-  }
+  cats.forEach(function (c) { ctaOf[c.id] = c.cta || 'Оформить'; });
 
   /* ── фильтры ── */
-  if (filters && typeof CATEGORIES !== 'undefined') {
+  if (filters) {
     filters.innerHTML =
       '<button class="chipbtn" type="button" data-filter="all" aria-pressed="true">Все</button>' +
-      CATEGORIES.map(function (c) {
+      cats.map(function (c) {
         return '<button class="chipbtn" type="button" data-filter="' + esc(c.id) +
                '" aria-pressed="false">' + esc(c.label) + '</button>';
       }).join('');
   }
 
   /* ── карточки ── */
-  var shown = OFFERS.filter(function (o) { return !o.hidden; });
+  var shown = offers.filter(function (o) { return !o.hidden; });
 
   grid.innerHTML = shown.map(function (o, i) {
     var n = i + 1;

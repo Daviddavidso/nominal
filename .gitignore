@@ -1,2 +1,17 @@
+# Служебное, появляется во время работы сайта — в репозиторий не кладём.
 leads.csv
 .DS_Store
+.admin-pass
+.login-tries
+data.js.prev
+data.js.tmp
+published.json
+
+# Файлы телеграм-бота: токен, получатели заявок, код подключения.
+# Обычно лежат в .nominal-private над корнем сайта, но на закрытом
+# хостинге падают рядом с сайтом.
+.tg-token
+.tg-chats.json
+.tg-offset
+.tg-code
+.tg-denied.json
